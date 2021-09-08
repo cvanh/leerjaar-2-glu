@@ -7,37 +7,52 @@
     width: 80%;
     background-color: gray;
     min-height: 290px;
+    margin-top: 75px;
+}
+#head{
+    text-align: center;
+    height: 30px;
+}
+#mid{
 }
 #left{
     float: left;
     background-color: aquamarine;
-    width: 44%;
+    width: 49.94%;
     text-align: center;
-
+    display: inline-block;
 }
 #left form input{
     /* -webkit-appearance: none; */
-    height: 83px;
+    outline: none;
+    height: 50px;
     margin-left: auto;
     margin-right: auto;
     width: 300px;
-    background-color: rgb(20, 71, 71);
     outline: none;
     display: inline-block;
-
+    border-bottom: 1px black;
+    border-style: solid;
+    border-radius: 4px;
+    margin-top: 10px;
 }
 #center{
     background-color: blue;
-    width: 11%;
+    width: 0.1%;
+    display: inline-block;
+    height: 280px;
 }
 #right{
     float: right;
     background-color: antiquewhite;
-    width: 44%;
+    width: 49.94%;
+    display: inline-block;
+    height: 280px;
+
 }
 
 .loginwithbutton{
-    height: 33%;
+    height: 21%;
     width: 50%;
     border: 1px black;
     border-style: solid;
