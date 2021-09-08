@@ -20,7 +20,8 @@
     background-color: aquamarine;
     width: 49.94%;
     text-align: center;
-    display: inline-block;
+    display: inline-flexbox;
+    height: 280px;
 }
 #left form input{
     /* -webkit-appearance: none; */
@@ -30,11 +31,11 @@
     margin-right: auto;
     width: 300px;
     outline: none;
-    display: inline-block;
+    display: inline-flexbox;
     border-bottom: 1px black;
     border-style: solid;
     border-radius: 4px;
-    margin-top: 10px;
+    margin-top: 25px;
 }
 #center{
     background-color: blue;
@@ -42,11 +43,15 @@
     display: inline-block;
     height: 280px;
 }
+#center div{
+    margin-left: -14px;
+    font-size: xx-large;
+}
 #right{
     float: right;
     background-color: antiquewhite;
     width: 49.94%;
-    display: inline-block;
+    display: inline-flexbox;
     height: 280px;
 
 }
@@ -74,4 +79,16 @@
     display: inline-block;
 position: relative;
 
+}
+
+@media screen and (max-width: 600px) {
+    #left{
+        display: block;
+    }
+    #right{
+        display: block;
+    }
+    #center{
+        display: none;
+    }
 }
