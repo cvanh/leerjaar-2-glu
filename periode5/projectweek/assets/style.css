@@ -37,6 +37,11 @@
     border-radius: 4px;
     margin-top: 25px;
 }
+#passwordfield:not(:focus) {
+    color: transparent;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
 #center{
     background-color: blue;
     width: 0.1%;
@@ -92,3 +97,4 @@ position: relative;
         display: none;
     }
 }
+
