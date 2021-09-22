@@ -1,12 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>book rental </title>
 </head>
+
 <body>
-    
+    <fieldset>
+        <form action="./editbook.html" method="GET">
+            <input type="text" name="isbn" placeholder="isbn13">
+            <input type="submit" name="submit">
+        </form>
+    </fieldset>
+    <form id="form" method="POST" action="http://localhost:8082/addbook">
+        <label>title</label>
+        <input type="text" class="input" name="title" id="title" placeholder="title">
+        <br>
+        <label>author</label>
+        <input type="text" class="input" name="author" id="author" placeholder="author">
+        <br>
+        <label>isbn13</label>
+        <input type="text" class="input" name="isbn13" id="isbn13" placeholder="isbn13">
+        <br>
+        <label>format</label>
+        <input type="text" class="input" name="format" id="format" placeholder="format">
+        <br>
+        <label>publisher</label>
+        <input type="text" class="input" name="publisher" id="publisher" placeholder="publisher">
+        <br>
+        <label>page</label>
+        <input type="text" class="input" name="page" id="page" placeholder="page">
+        <br>
+        <label>dimensions</label>
+        <input type="text" class="input" name="dimensions" id="dimensions" placeholder="dimensions">
+        <br>
+        <label>overview</label>
+        <input type="text" class="input" name="overview" id="overview" placeholder="overview">
+        <br>
+        <label>borrow</label>
+        <input type="text" class="input" name="borrow" id="borrow" value="false" laceholder="borrow">
+        <br>
+        <input type="submit">
+    </form>
+    <script>
+        // not my proudest work stolen from: https://easyautotagging.com/javascript-get-url-parameter/ archive.org copy has been made
+        const queryString = window.location.search;
+        const urlparams = new URLSearchParams(queryString);
+        const isbn = urlparams.get('isbn')
+
+        if (isbn) {
+            fetch(`http://localhost:8082/getbookdata/${isbn}`, {
+                mode: 'cors'
+            }).then(
+                Response => Response.json()
+            ).then(data => {
+                const inputfields = document.getElementsByClassName('input')
+                for (const key in data) {
+                    console.log(key + data[key])
+                    for (let x = 0; x < inputfields.length; x++) {
+                        inputfields[key].value = data[key]
+                    }
+                }
+            }
+        )
+        }
+    </script>
 </body>
+
 </html>
