@@ -6,7 +6,8 @@ const {
     db_insert,
     db_find,
     db_update,
-    db_findone
+    db_findone,
+    DB_replaceOne
 } = require('./utils/database')
 var bodyParser = require("body-parser");
 var urlencodedParser = bodyParser.urlencoded({
@@ -41,9 +42,13 @@ app.get("/getbookdata/:value", jsonParser, async (req, res) => {
 });
 
 // edit a book, you need to run gat data
-app.get("/editbook", async (req, res) => {
+app.post("/editbook",urlencodedParser, async (req, res) => {
     console.log('edit book')
+    console.log(req.body.isbn13)
+    console.log(req.body)
+    await DB_replaceOne('books',{"isbn13":req.body.isbn13},req.body)
     res.header('Access-Control-Allow-Origin', '*')
+    res.status(200).send()
 });
 app.get("/borrow/:value", async (req, res) => {
     console.log(`borrow book ${req.params.IdOrIsbn} and the value ${req.params.value}`)

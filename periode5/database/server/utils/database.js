@@ -85,7 +85,11 @@ async function db_findandcount(collection, query) {
   });
   return count;
 }
-
+function DB_replaceOne(collection, query, newdata) {
+  connect.then(async () => {
+    await dbo.collection(collection).replaceOne(query,newdata);
+  });
+}
 module.exports = {
   db_insert,
   db_insertmany,
@@ -94,4 +98,5 @@ module.exports = {
   db_remove,
   db_findone,
   db_findandcount,
+  DB_replaceOne,
 };
