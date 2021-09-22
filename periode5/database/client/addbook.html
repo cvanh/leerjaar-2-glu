@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book rental </title>
+</head>
+
+<body>
+    <form id="form" method="POST" action="http://localhost:8082/addbook">
+        <label>title</label>
+        <input type="text" name="title" id="title" placeholder="title">
+        <br>
+        <label>author</label>
+        <input type="text" name="author" id="author" placeholder="author">
+        <br>
+        <label>isbn13</label>
+        <input type="text" name="isbn13" id="isbn13" placeholder="isbn13">
+        <br>
+        <label>format</label>
+        <input type="text" name="format" id="format" placeholder="format">
+        <br>
+        <label>publisher</label>
+        <input type="text" name="publisher" id="publisher" placeholder="publisher">
+        <br>
+        <label>page</label>
+        <input type="text" name="page" id="page" placeholder="page">
+        <br>
+        <label>dimensions</label>
+        <input type="text" name="dimensions" id="dimensions" placeholder="dimensions">
+        <br>
+        <label>overview</label>
+        <input type="text" name="overview" id="overview" placeholder="overview"> 
+        <br>
+        <label>borrow</label>
+        <input type="text" name="borrow" id="borrow" value="false" laceholder="borrow">
+        <br>
+        <input type="submit">
+    </form>
+</body>
+
+</html>
