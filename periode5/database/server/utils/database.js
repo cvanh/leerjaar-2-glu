@@ -73,7 +73,7 @@ function db_remove(collection, query) {
     console.log(`deleted ${query} from ${collection}`);
   });
 }
-// remove('dev',{a:"n-word"})
+// remove('dev',{a:"nba"})
 
 async function db_findandcount(collection, query) {
   let count;

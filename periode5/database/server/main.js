@@ -4,7 +4,8 @@ const app = express();
 const {
     DB_find,
     db_insert,
-    db_find
+    db_find,
+    db_update
 } = require('./utils/database')
 var bodyParser = require("body-parser");
 var urlencodedParser = bodyParser.urlencoded({
@@ -36,8 +37,10 @@ app.get("/borrow/:value", async (req, res) => {
     console.log(`borrow book ${req.params.IdOrIsbn} and the value ${req.params.value}`)
 
 });
-app.post("/return", jsonParser, async (req, res) => {
+app.post("/return/:value", jsonParser, async (req, res) => {
     console.log('return book')
+    await db_update('books',{"borrow":req.params.value},{"borrow":true})
+    res.status(200).send()
 });
 
 // creates a http server with express for the REST part of the api
