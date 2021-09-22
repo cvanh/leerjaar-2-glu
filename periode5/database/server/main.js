@@ -14,11 +14,12 @@ var urlencodedParser = bodyParser.urlencoded({
 var jsonParser = bodyParser.json();
 
 // add a book to the database
-app.post("/addbook", jsonParser, async (req, res) => {
+app.post("/addbook", urlencodedParser, async (req, res) => {
+
     console.log('adding book')
     console.log(req.body)
-    await db_insert('books', req.body)
-    res.status(200).send()
+    // await db_insert('books', req.body)
+    res.status(200).send('<script>window.history.back();</script>')
 });
 app.post("/getbookdata/:value", jsonParser, async (req, res) => {
     console.log('get book data')
