@@ -85,7 +85,7 @@ async function db_findandcount(collection, query) {
   });
   return count;
 }
-function DB_replaceOne(collection, query, newdata) {
+async function DB_replaceOne(collection, query, newdata) {
   connect.then(async () => {
     await dbo.collection(collection).replaceOne(query,newdata);
   });
