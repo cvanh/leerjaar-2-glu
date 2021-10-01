@@ -1,7 +1,7 @@
 const MongoClient = require("mongodb").MongoClient;
 // Connection URI
 require("dotenv").config({
-  path: "../env",
+  path: ".env",
 });
 const uri = process.env.DB_URL;
 const client = new MongoClient(uri, {
@@ -47,6 +47,7 @@ async function db_findone(collection, data) {
   await connect.then(async () => {
     result = await dbo.collection(collection).findOne(data);
   });
+  // console.log(result)
   if (result === undefined) {
     result = false;
   }
@@ -61,8 +62,8 @@ function db_update(collection, query, data) {
     const NewData = {
       $set: data,
     };
-    await dbo.collection(collection).updateOne(query, NewData);
-    console.log(`updated ${collection} ${query} with ${NewData}`);
+    await dbo.collection(collection).updateOne(query, {$set:data});
+    // console.log(`updated ${collection} ${query} with ${NewData}`);
   });
 }
 // update('dev', { a: 2 }, {a:'papai'});

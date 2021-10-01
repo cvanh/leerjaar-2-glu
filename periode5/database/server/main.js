@@ -14,52 +14,13 @@ var urlencodedParser = bodyParser.urlencoded({
     extended: true,
 });
 var jsonParser = bodyParser.json();
+const {usercheck} = require("./utils/usercheck")
 
-// add a book to the database
-app.post("/addbook", urlencodedParser, async (req, res) => {
+app.use("/users/", require("./routes/user.js"));
 
-    console.log('adding book')
-    console.log(req.body)
-    // await db_insert('books', req.body)
-    res.header('Access-Control-Allow-Origin', '*')
-    res.status(200).send('<script>window.history.back();</script>')
-});
+app.use("/books/", require("./routes/books.js"));
 
-app.get("/getbookdata/:value", jsonParser, async (req, res) => {
-    console.log('get book data')
-    // find the book 
-    const response = await db_findone('books', {
-        "isbn13": parseInt(req.params.value)
-    })
-    // removes the _id from the object
-    delete response._id
-    // debugging
-    console.log(response)
-    // sets the correct header otherwise fetch doesnt work
-    res.header('Access-Control-Allow-Origin', '*')
-    // sends the status so fetch doesnt complain 
-    res.status(200).send(response)
-});
 
-// edit a book, you need to run gat data
-app.post("/editbook",urlencodedParser, async (req, res) => {
-    console.log('edit book')
-    console.log(req.body.isbn13)
-    console.log(req.body)
-    await DB_replaceOne('books',{"isbn13":req.body.isbn13},req.body)
-    res.header('Access-Control-Allow-Origin', '*')
-    res.status(200).send()
-});
-app.get("/borrow/:value", async (req, res) => {
-    console.log(`borrow book ${req.params.IdOrIsbn} and the value ${req.params.value}`)
-    res.header('Access-Control-Allow-Origin', '*')
-});
-app.post("/return/:value", jsonParser, async (req, res) => {
-    console.log('return book')
-    await db_update('books',{"borrow":req.params.value},{"borrow":true})
-    res.header('Access-Control-Allow-Origin', '*')
-    res.status(200).send()
-});
 
 // creates a http server with express for the REST part of the api
 const server = app.listen(8082, function () {
