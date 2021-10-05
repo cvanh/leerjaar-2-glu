@@ -9,10 +9,7 @@ const stylesHandler = isProduction
   : "style-loader";
 
 const config = {
-  entry:{
-    b:"./src/",
-    a: "./src/opdracht1"
-  },
+  entry:"./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
   },
@@ -40,11 +37,7 @@ const config = {
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
-      },
-      {
-        test: /\.html$/i,
-        loader: "html-loader",
-      },
+      }
 
       // voeg eigen modules hier
     ],

@@ -40,7 +40,7 @@ server.on('upgrade', (request, socket, head) => {
         pathname
     } = parse(request.url);
     switch (pathname) {
-        case '/bar': // for assaignment 1 a unique ws end point
+        case '/opdracht1': // for assaignment 1 a unique ws end point
             wss1.handleUpgrade(request, socket, head, function done(ws) {
                 wss1.emit('connection', ws, request);
             });
