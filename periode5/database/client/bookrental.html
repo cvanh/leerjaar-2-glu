@@ -8,10 +8,22 @@
 </head>
 <body>
     <fieldset>
-
+        <form method="POST" action="http://localhost:8082/books/borrow">
+            <h1>borrow</h1>
+            <label>isbn13</label>
+            <input name="isbn13" type="text">
+            <label>email</label>
+            <input name="email" type="email">
+            <input type="submit">
+        </form>
     </fieldset>
     <fieldset>
-        
+        <form method="POST" action="http://localhost:8082/books/return">
+            <h1>return</h1>
+            <label>isbn13</label>
+            <input name="isbn13" type="text">
+            <input type="submit">
+        </form>
     </fieldset>
 
 </body>

@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>book rental </title>
 </head>
+
 <body>
-    <a href="./editbook.html">editbook</a>
-    <a href="./addbook.html">add book</a>
-    <a href="./bookrental.html">book rental</a>
+    <div id="container">
+    <div id="login">
+        <form id="form">
+            <input name="loggedin" type="text">
+            <input type="submit">
+        </form>
+    </div>
+    <!-- the extra stuff a admin is supposed to see -->
+    <div id="superuser">
+        <a href="./admin/adduser.html">add a user</a>
+    </div>
 
+    <!-- admin -->
+    <div id="admin">
+        <a href="./editbook.html">editbook</a>
+        <a href="./addbook.html">add book</a>
+    </div>
 
-
+    <!-- what a user or greater is allowed to see -->
+    <div id="user">
+        <a href="./bookrental.html">book rental</a>
+    </div>
+    </div>
+<script src="./assets/indexpage.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
+
 </html>

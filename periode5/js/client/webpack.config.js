@@ -1,8 +1,6 @@
-
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const css =  require("./src/syle.css")
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -11,7 +9,10 @@ const stylesHandler = isProduction
   : "style-loader";
 
 const config = {
-  entry: "./src/index.js",
+  entry:{
+    b:"./src/",
+    a: "./src/opdracht1"
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
   },
@@ -29,7 +30,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/i,
+        test: /\.(js$|jsx)$/i,
         loader: "babel-loader",
       },
       {
@@ -40,7 +41,10 @@ const config = {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
       },
-      
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
 
       // voeg eigen modules hier
     ],

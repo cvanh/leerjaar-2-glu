@@ -17,13 +17,15 @@ const wss2 = new WebSocketServer({
 });
 const WssPort = 7072;
 
-wss1.on('connection',(ws) => {
-    console.log('connection')
-    ws.on('message', (m) => {
-        const data = JSON.parse(m)
-        console.log(data)
-    })
-});
+wss1.on('connection', function connection(ws) {
+    ws.on('message', function incoming(data, isBinary) {
+      wss.clients.forEach(function each(client) {
+        if (client.readyState === WebSocket.OPEN) {
+          client.send(data, { binary: isBinary });
+        }
+      });
+    });
+  });
 
 wss2.on('connection', (ws) => {
     console.log('connection')
@@ -38,7 +40,7 @@ server.on('upgrade', (request, socket, head) => {
         pathname
     } = parse(request.url);
     switch (pathname) {
-        case '/1': // for assaignment 1 a unique ws end point
+        case '/bar': // for assaignment 1 a unique ws end point
             wss1.handleUpgrade(request, socket, head, function done(ws) {
                 wss1.emit('connection', ws, request);
             });

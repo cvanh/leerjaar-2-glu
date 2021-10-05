@@ -9,5 +9,5 @@ yarn build
 ```
 run the live server with:
 ```
-npm run live-server
+npm run dev
 ```

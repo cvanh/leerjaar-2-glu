@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>add a user</h1>
+    <form method="POST" action="http://localhost:8082/users/add">
+        <label>usertoken</label>
+        <input name="token" type="text">
+        <br>
+        <pre>
+            this is the permission level.
+            to add a superuser type 0
+            to add a admin type 1
+            to add a user type 2
+            <bold>THIS WONT WORK IF YOU MAKE A MISTAKE</bold>
+        </pre>
+        <input name="permission" type="number">
+        <input type="submit">
+    </form>
+    
+</body>
+</html>

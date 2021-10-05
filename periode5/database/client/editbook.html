@@ -15,7 +15,7 @@
             <input type="submit" name="submit">
         </form>
     </fieldset>
-    <form id="form" method="POST" action="http://localhost:8082/editbook">
+    <form id="form" method="POST" action="http://localhost:8082/books/editbook">
         <label>title</label>
         <input type="text" class="input" name="title" id="title" placeholder="title">
         <br>
@@ -43,6 +43,8 @@
         <label>borrow</label>
         <input type="text" class="input" name="borrow" id="borrow" value="false" laceholder="borrow">
         <br>
+        <label>your token</label>
+        <input type="text" name="token" id="token" placeholder="your token"> 
         <input type="submit">
     </form>
     <script>
@@ -52,7 +54,7 @@
         const isbn = urlparams.get('isbn')
 
         if (isbn) {
-            fetch(`http://localhost:8082/getbookdata/${isbn}`, {
+            fetch(`http://localhost:8082/books/getbookdata/${isbn}`, {
                 mode: 'cors'
             }).then(
                 Response => Response.json()
