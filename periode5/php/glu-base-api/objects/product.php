@@ -27,7 +27,12 @@ class Product extends Database
        function write($category_id,$naam,$beschrijving,$prijs,$toegevoegd_op,$gewijzigd_op){ //TODO
         $query = "
         INSERT INTO " . $this->table_name . "(`category_id`, `naam`, `beschrijving`, `prijs`, `toegevoegd_op`, `gewijzigd_op`) 
-        VALUES (". $category_id . "," . $naam . "," . $beschrijving . ",". $prijs . ",". $toegevoegd_op.",". $gewijzigd_op . ") " ;
+        VALUES (". $category_id . "," 
+        .'"'. $naam .'"'. ","
+        .'"'. $beschrijving . '"'. ","
+        . $prijs . ","
+        .'"'. $toegevoegd_op.'"'.","
+        .'"'. $gewijzigd_op .'"'. ") " ;
         echo($query);
         $result = $this->conn->query($query);
         // return $result;
@@ -56,7 +61,7 @@ $db = $database->getConnection();
 $Product = new Product($db);
 var_dump($Product);
 // $Product->read();
-$Product->write('2','naam','beschrijving','3','2019','2020');
+// $Product->write('2','naam','beschrijving','3','2021-09-21 19:00:00','2021-09-22 19:50:58');
 // $Product->update('naam','remcola','2');
 
 // $Product->delete(3);

@@ -1,11 +1,13 @@
 <?php
-class Database
+require("env.php");
+class Database extends env
 {
+   
    // Database instellingen
-   private $host = "localhost";
-   private $db_name = "apiopdracht";
-   private $username = "root";
-   private $password = "123456";
+   // private $host = "localhost";
+   // private $db_name = "apiopdracht";
+   // private $username = "root";
+   // private $password = "123456";
    private $conn;
    public function getConnection()
    {

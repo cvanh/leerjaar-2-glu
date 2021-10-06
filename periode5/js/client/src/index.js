@@ -1,4 +1,6 @@
 import "./style.css";
+import io from "socket.io-client"
+import http from "http"
 // import "./opdracht1/index.html"
 console.log("a");
 
@@ -6,7 +8,7 @@ const Buttons = document.getElementsByClassName('button')
 
 const button = document.getElementById('button')
 const counter = document.getElementById('counter')
-// const ws = new WebSocket("ws://localhost:7072/bar")
+const socket = io("ws://localhost:8070");
 console.log(Buttons)
 for (const item of Buttons) {
     // console.log(item.innerHTML)
