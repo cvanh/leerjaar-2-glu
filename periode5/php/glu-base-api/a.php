@@ -13,7 +13,7 @@ $router->get('/', function() {
     echo '<h1>standaard</h1>';
 });
 
-$router->get('/testpagina', function() {
+$router->get('/testpagina/', function() {
     echo '<h1>testpagina</h1>';
 });
 
