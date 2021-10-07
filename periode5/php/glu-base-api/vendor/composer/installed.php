@@ -1,22 +1,31 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'b801c7a001a36df17b489250fd6e16ef0366536d',
+        'reference' => '7ccf6964ed4d95fb2ff05d663917ff3e54ed984e',
         'name' => '__root__',
         'dev' => true,
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'b801c7a001a36df17b489250fd6e16ef0366536d',
+            'reference' => '7ccf6964ed4d95fb2ff05d663917ff3e54ed984e',
+            'dev_requirement' => false,
+        ),
+        'bramus/router' => array(
+            'pretty_version' => '1.6',
+            'version' => '1.6.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../bramus/router',
+            'aliases' => array(),
+            'reference' => 'd2cf97d5c471e272ac5a2a88b652bc75089c8ae3',
             'dev_requirement' => false,
         ),
         'phpstan/phpstan' => array(

@@ -10,6 +10,16 @@ class ComposerStaticInita2d6f1f50a682e382de38fc003b3dc73
         '9b38cf48e83f5d8f60375221cd213eee' => __DIR__ . '/..' . '/phpstan/phpstan/bootstrap.php',
     );
 
+    public static $prefixesPsr0 = array (
+        'B' => 
+        array (
+            'Bramus' => 
+            array (
+                0 => __DIR__ . '/..' . '/bramus/router/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
@@ -17,6 +27,7 @@ class ComposerStaticInita2d6f1f50a682e382de38fc003b3dc73
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixesPsr0 = ComposerStaticInita2d6f1f50a682e382de38fc003b3dc73::$prefixesPsr0;
             $loader->classMap = ComposerStaticInita2d6f1f50a682e382de38fc003b3dc73::$classMap;
 
         }, null, ClassLoader::class);
