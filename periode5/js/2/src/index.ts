@@ -47,10 +47,12 @@ class Wheel {
    */
   private WheelRotate(multiplier: any) {
     let Rotation: number = 0;
-    for (let index = 0; index < 600; index++) {
+    for (let index = 0; index < 60; index++) {
       setTimeout(() => {
         console.log(this.Easing(index,1,5,60))
-        this.wheel.style.transform = `rotate(${parseInt(this.Easing(index,1,360,600) + multiplier)}deg)`
+        this.wheel.style.transform = `rotate(${parseInt(this.Easing(index,1,360,60) + multiplier)}deg)`
+        this.wheel.style.transition =  'transform 10ms ease-in-out'
+
       }, (Math.random()*100000));
     }
     // this.wheel.style.transform = `rotate(${this.Easing(0,1,5,60)}deg)`
