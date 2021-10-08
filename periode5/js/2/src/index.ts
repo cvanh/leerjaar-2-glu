@@ -27,16 +27,16 @@ class Wheel {
    * @param WheelOptions the array with the options on the wheel
    */
   private WheelConstruct(WheelOptions: any) {
-    for (let index = 0; index < WheelOptions.length; index++) {
+    for (let index = 0; index < this.WheelOptions.length; index++) {
       // creates a div element
       const t = document.createElement("div");
       // then this element will receive a class
       t.classList.add("WheelSpoke");
       // the Wheel gets a content from the array
-      t.innerHTML = WheelOptions[index];
+      t.innerHTML = this.WheelOptions[index];
       // the wheelspoke receives a rotate
       t.style.transform = `rotate(${
-        (360 / WheelOptions.length) * index}deg)`;
+        (360 / this.WheelOptions.length) * index}deg)`;
       // then it is inserted to the wheel body
       this.wheel.appendChild(t);
     }
@@ -85,6 +85,6 @@ class Wheel {
     });
   }
 }
-const WheelOptions = ["1", "2", "3", "4", "5", "6"];
+const WheelOptions = ["1", "2", "3", "4", "5", "6","7","8","9","10"];
 const t = document.getElementById("wheel");
 const rad = new Wheel(t, WheelOptions);
