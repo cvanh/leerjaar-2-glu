@@ -1,21 +1,31 @@
-const WheelOptions = ["1", "2", "3", "4", "5", "6"];
+/*
+todo list
 
-// creates all the elements
-// for (let index = 0; index < WheelOptions.length; index++) {
-//     const t = document.createElement('div');
-//     t.classList.add('WheelSpoke')
-//     t.innerHTML = WheelOptions[index];
-//     wheel.appendChild(t)
-// }
+[] replace any to proper types
+[] unfuck the wheel bug
+[] add a number selector
+[] ??
+
+*/
 
 class Wheel {
   wheel;
-  constructor(wheel: any) {
-    // const wheel = document.getElementById('wheel');
+  WheelOptions;
+  constructor(wheel: any, WheelOptions: any) {
+    // declares the variables so we can use them
     this.wheel = wheel;
+    this.WheelOptions = WheelOptions;
+
+    // creates the wheel spokes
     this.WheelConstruct(WheelOptions);
+
+    // adds a event listner to the start button
     this.WheelStartButton();
   }
+  /**
+   * draws the wheel
+   * @param WheelOptions the array with the options on the wheel
+   */
   private WheelConstruct(WheelOptions: any) {
     for (let index = 0; index < WheelOptions.length; index++) {
       // creates a div element
@@ -25,38 +35,56 @@ class Wheel {
       // the Wheel gets a content from the array
       t.innerHTML = WheelOptions[index];
       // the wheelspoke receives a rotate
-      t.style.transform = `rotate(${(360 / WheelOptions.length) * index}deg)`;
+      t.style.transform = `rotate(${
+        (360 / WheelOptions.length) * index}deg)`;
       // then it is inserted to the wheel body
       this.wheel.appendChild(t);
     }
   }
-  private WheelRotate() {
+  /**
+   * makes the wheel rotate
+   * @param multiplier
+   */
+  private WheelRotate(multiplier: any) {
     let Rotation: number = 0;
-    for (let index = 0; index < 60; index++) {
-        console.log(this.Easing(index,1,5,60))        
+    for (let index = 0; index < 600; index++) {
+      setTimeout(() => {
+        console.log(this.Easing(index,1,5,60))
+        this.wheel.style.transform = `rotate(${parseInt(this.Easing(index,1,360,600) + multiplier)}deg)`
+      }, (Math.random()*100000));
     }
-    this.wheel.style.transform = `rotate(${this.Easing(0,1,5,60)}deg)`    
+    // this.wheel.style.transform = `rotate(${this.Easing(0,1,5,60)}deg)`
   }
   /**
-   * 
+   *
    * @param t current time
    * @param b start value
    * @param c change in value
    * @param d duraction
    * @returns stuff
    */
-  private Easing(t:number, b:number, c:number, d:number) {
-    t /= d/2;
-    if (t < 1) return c/2*t*t + b;
+  private Easing(t: number, b: number, c: number, d: number) {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t + b;
     t--;
-    return -c/2 * (t*(t-2) - 1) + b;
-};
-  // add a event listner to the start button so when its pressed it can make the weel spin
+    return (-c / 2) * (t * (t - 2) - 1) + b;
+  }
+  /**
+   * clears the wheel of all the spokes
+   */
+  private WheelSpokeClear() {
+    this.wheel.innerHTML = null;
+  }
+
+  /**
+   * add a event listner to the start button so when its pressed it can make the wheel spin
+   */
   public WheelStartButton() {
     document.getElementById("start").addEventListener("click", () => {
-      this.WheelRotate();
+      this.WheelRotate(WheelOptions);
     });
   }
 }
-
-const rad = new Wheel(document.getElementById("wheel"));
+const WheelOptions = ["1", "2", "3", "4", "5", "6"];
+const t = document.getElementById("wheel");
+const rad = new Wheel(t, WheelOptions);
