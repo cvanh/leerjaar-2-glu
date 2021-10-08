@@ -4,20 +4,23 @@ todo list
 [] replace any to proper types
 [] unfuck the wheel bug
 [] add a number selector
+[] add _ to private functions
 [] ??
 
 */
 
 class Wheel {
-  wheel;
+  wheel; 
   WheelOptions;
-  constructor(wheel: any, WheelOptions: any) {
+  constructor(wheel: any, WheelOptions: string[]) {
     // declares the variables so we can use them
-    this.wheel = wheel;
+    this.wheel = wheel as HTMLBodyElement;
+
+    // the spokes and values
     this.WheelOptions = WheelOptions;
 
     // creates the wheel spokes
-    this.WheelConstruct(WheelOptions);
+    this._WheelConstruct(WheelOptions);
 
     // adds a event listner to the start button
     this.WheelStartButton();
@@ -25,8 +28,9 @@ class Wheel {
   /**
    * draws the wheel
    * @param WheelOptions the array with the options on the wheel
+   * @private
    */
-  private WheelConstruct(WheelOptions: any) {
+  private _WheelConstruct(WheelOptions: string[]) {
     for (let index = 0; index < this.WheelOptions.length; index++) {
       // creates a div element
       const t = document.createElement("div");
@@ -44,18 +48,18 @@ class Wheel {
   /**
    * makes the wheel rotate
    * @param multiplier
+   * @private
    */
-  private WheelRotate(multiplier: any) {
-    let Rotation: number = 0;
-    for (let index = 0; index < 60; index++) {
+  private _WheelRotate() {
+    for (let index:number = 0; index < 60; index++) {
+      // random timing so everything will be in sync
+      const Randomtiming: number = Math.random() * 60 
       setTimeout(() => {
-        console.log(this.Easing(index,1,5,60))
-        this.wheel.style.transform = `rotate(${parseInt(this.Easing(index,1,360,60) + multiplier)}deg)`
-        this.wheel.style.transition =  'transform 10ms ease-in-out'
-
-      }, (Math.random()*100000));
+        console.log(this._Easing(index,1,5,60))
+        this.wheel.style.transition =  `transform ${Randomtiming * 1.2}ms`
+        this.wheel.style.transform = `rotate(${this._Easing(index,1,360,Randomtiming)}deg)`
+      }, (Randomtiming * 1.2));
     }
-    // this.wheel.style.transform = `rotate(${this.Easing(0,1,5,60)}deg)`
   }
   /**
    *
@@ -64,8 +68,9 @@ class Wheel {
    * @param c change in value
    * @param d duraction
    * @returns stuff
+   * @private
    */
-  private Easing(t: number, b: number, c: number, d: number) {
+  private _Easing(t: number, b: number, c: number, d: number) {
     t /= d / 2;
     if (t < 1) return (c / 2) * t * t + b;
     t--;
@@ -73,8 +78,9 @@ class Wheel {
   }
   /**
    * clears the wheel of all the spokes
+   * @private
    */
-  private WheelSpokeClear() {
+  private _WheelSpokeClear() {
     this.wheel.innerHTML = null;
   }
 
@@ -83,10 +89,12 @@ class Wheel {
    */
   public WheelStartButton() {
     document.getElementById("start").addEventListener("click", () => {
-      this.WheelRotate(WheelOptions);
+      this._WheelRotate();
     });
   }
 }
-const WheelOptions = ["1", "2", "3", "4", "5", "6","7","8","9","10"];
-const t = document.getElementById("wheel");
+const WheelOptions: string[] = ["1", "2", "3", "4", "5", "6","7","8","9","10"];
+
+// yea the var names suck
+const t = document.getElementById("wheel") as HTMLBaseElement;
 const rad = new Wheel(t, WheelOptions);
