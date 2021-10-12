@@ -22,7 +22,7 @@ function startGame(duration){
     console.log(`starting a game with a duration of: ${(duration * 100)} seconds`)
     
     // resets the counter
-    XPathResult.innerHTML = 
+    result.innerHTML = 
     player1counter.innerHTML = 0
     player2counter.innerHTML = 0
 

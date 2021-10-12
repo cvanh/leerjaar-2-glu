@@ -1,10 +1,10 @@
 /*
 todo list
 
-[] replace any to proper types
-[] unfuck the wheel bug
-[] add a number selector
-[] add _ to private functions
+[x] replace any to proper types
+[x] unfuck the wheel bug
+[x] add a number selector
+[x] add _ to private functions
 [] ??
 
 */
@@ -53,12 +53,14 @@ class Wheel {
   private _WheelRotate() {
     for (let index:number = 0; index < 60; index++) {
       // random timing so everything will be in sync
+      let RotationGeneration:number = 1
       const Randomtiming: number = Math.random() * 60 
-      setTimeout(() => {
+      setInterval(() => {
         console.log(this._Easing(index,1,5,60))
-        this.wheel.style.transition =  `transform ${Randomtiming * 1.2}ms`
+        this.wheel.style.transition =  `transform ${Randomtiming * 1.10 * RotationGeneration}ms`
         this.wheel.style.transform = `rotate(${this._Easing(index,1,360,Randomtiming)}deg)`
-      }, (Randomtiming * 1.2));
+        RotationGeneration++
+      }, (Randomtiming * 100));
     }
   }
   /**
@@ -85,7 +87,7 @@ class Wheel {
   }
 
   /**
-   * add a event listner to the start button so when its pressed it can make the wheel spin
+   * @description add a event listner to the start button so when its pressed it can make the wheel spin
    */
   public WheelStartButton() {
     document.getElementById("start").addEventListener("click", () => {
@@ -95,6 +97,6 @@ class Wheel {
 }
 const WheelOptions: string[] = ["1", "2", "3", "4", "5", "6","7","8","9","10"];
 
-// yea the var names suck
+// yea the variable names suck
 const t = document.getElementById("wheel") as HTMLBaseElement;
 const rad = new Wheel(t, WheelOptions);

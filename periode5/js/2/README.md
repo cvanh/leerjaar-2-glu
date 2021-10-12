@@ -1,15 +1,16 @@
-# 🚀 Welcome to your new awesome project!
+# wheel of unfortune
+### motivation
+the goal of this project was to recreate the wheel of fortune from the well known show. this was for a school asaignment 
 
-This project has been created using **webpack-cli**, you can now run
+<hr>
+# instalation
+1. open a terminal window in this folder
+2. run `npm i`
 
-```
-npm run build
-```
+#### for development 
+run `npm run watch`
+and serve ./dist/index.html using your own liveserver
 
-or
-
-```
-yarn build
-```
-
-to bundle your application
+#### for production
+run `npm run build:prod`
+then serve ./dist using your own webserver
