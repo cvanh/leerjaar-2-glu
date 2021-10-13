@@ -7,13 +7,15 @@ require __DIR__ . '/vendor/autoload.php';
 // Create Router instance
 $router = new \Bramus\Router\Router();
 
+// echo('a');
+
 // Define routes
 // ...
 $router->get('/', function() {
     echo '<h1>standaard</h1>';
 });
 
-$router->get('/testpagina/', function() {
+$router->get('/testpagina', function() {
     echo '<h1>testpagina</h1>';
 });
 
@@ -47,7 +49,7 @@ $router->get('/blog/\[^/]+', function($name) {
         echo('naam van artikel is: ' . $name);
     }
 });
-$router->get('/login', function($name) {
+$router->get('/login', function() {
 if($_POST){
     var_dump($_POST);
 } else {
