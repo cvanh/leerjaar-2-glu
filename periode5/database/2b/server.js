@@ -21,7 +21,7 @@ let conn = new Mysqli({
 })
 
 app.get("/getmessage", jsonParser, async (req, res) => {
-
+  const result = await db.query('select * from `student` limit 10')
 });
 
 const server = app.listen(8082, function () {
