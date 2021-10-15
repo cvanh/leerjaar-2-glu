@@ -44,24 +44,23 @@ $router->get('/foto/(\d+)', function($id) {
 
     }
 });
-$router->get('/blog/\[^/]+', function($name) {
-    if($name === 'naam artikel'){
-        echo('naam van artikel is: ' . $name);
-    }
+$router->get('/blog/(\d+)', function($name) {
+        echo('nummer van het artikel is: ' . $name);
 });
-$router->get('/login', function() {
-if($_POST){
-    var_dump($_POST);
-} else {
-    echo(`
-    <form method='POST'>
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname">
-    </form> 
-    `);
-}
+$router->post('/login', function() {
+echo $_POST;
+    // if($_POST){
+//     var_dump($_POST);
+// } else {
+//     echo(`
+//     <form method='POST'>
+//     <label for="fname">First name:</label><br>
+//     <input type="text" id="fname" name="fname"><br>
+//     <label for="lname">Last name:</label><br>
+//     <input type="text" id="lname" name="lname">
+//     </form> 
+//     `);
+// }
 
 });
 

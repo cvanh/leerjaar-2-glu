@@ -54,13 +54,13 @@ class Wheel {
     for (let index:number = 0; index < 60; index++) {
       // random timing so everything will be in sync
       let RotationGeneration:number = 1
-      const Randomtiming: number = Math.random() * 60 
+      const Randomtiming: number = Math.random() * 6
       setInterval(() => {
         console.log(this._Easing(index,1,5,60))
-        this.wheel.style.transition =  `transform ${Randomtiming * 1.10 * RotationGeneration}ms`
-        this.wheel.style.transform = `rotate(${this._Easing(index,1,360,Randomtiming)}deg)`
-        RotationGeneration++
-      }, (Randomtiming * 100));
+        this.wheel.style.transition =  `transform ${Randomtiming * 1.10 * RotationGeneration / 10}ms`
+        this.wheel.style.transform = `rotate(${this._Easing(index,1,360,Randomtiming / 10)}deg)`
+        // RotationGeneration++
+      }, (Randomtiming));
     }
   }
   /**
@@ -98,5 +98,5 @@ class Wheel {
 const WheelOptions: string[] = ["1", "2", "3", "4", "5", "6","7","8","9","10"];
 
 // yea the variable names suck
-const t = document.getElementById("wheel") as HTMLBaseElement;
+const t = document.getElementById("wheel");
 const rad = new Wheel(t, WheelOptions);

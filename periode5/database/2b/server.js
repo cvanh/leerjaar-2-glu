@@ -17,11 +17,23 @@ let conn = new Mysqli({
   user: 'root', // username
   passwd: '123456', // password
   charset: '', // CHARSET of database, default to utf8 【optional】
-  db: '' // the default database name  【optional】
+  db: 'apiopdracht' // the default database name  【optional】
 })
+let db = conn.emit()
 
-app.get("/getmessage", jsonParser, async (req, res) => {
-  const result = await db.query('select * from `student` limit 10')
+app.get("/read/:id", jsonParser, async (req, res) => {
+  const result = await db.query("SELECT * FROM `product` WHERE id = " + parseInt(req.params.id))
+  res.status(200).send(result)
+});
+
+app.post("/add", jsonParser, async (req, res) => {
+  console.log(req.body);
+  const query = 
+  console.log(query);
+  const result = db.query(`INSERT INTO "product" (category_id, naam, beschrijving, prijs, toegevoegd_op, gewijzigd_op)
+  VALUES ( '${req.body.category_id}', '${req.body.naam}', '${req.body.beschrijving}', '${req.body.prijs}', '${req.body.toegevoegd_op}', '${req.body.gewijzigd_op}')
+ `)
+  res.status(200).send(result)
 });
 
 const server = app.listen(8082, function () {
