@@ -28,12 +28,10 @@ app.get("/read/:id", jsonParser, async (req, res) => {
 
 app.post("/add", jsonParser, async (req, res) => {
   console.log(req.body);
-  const query = 
-  console.log(query);
-  const result = db.query(`INSERT INTO "product" (category_id, naam, beschrijving, prijs, toegevoegd_op, gewijzigd_op)
+  db.query(`INSERT INTO 'product' (category_id, naam, beschrijving, prijs, toegevoegd_op, gewijzigd_op)
   VALUES ( '${req.body.category_id}', '${req.body.naam}', '${req.body.beschrijving}', '${req.body.prijs}', '${req.body.toegevoegd_op}', '${req.body.gewijzigd_op}')
  `)
-  res.status(200).send(result)
+  res.status(200)
 });
 
 const server = app.listen(8082, function () {

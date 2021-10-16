@@ -1,11 +1,12 @@
 /*
 todo list
 
-[x] replace any to proper types
+[] replace any to proper types
 [x] unfuck the wheel bug
 [x] add a number selector
-[x] add _ to private functions
-[] ??
+[] add _ to private functions
+
+[x] fix the fucking wheel spin 
 
 */
 
@@ -51,11 +52,11 @@ class Wheel {
    * @private
    */
   private _WheelRotate() {
-    for (let index:number = 0; index < 60; index++) {
+    for (let index:number = 0; index < 6; index++) {
       // random timing so everything will be in sync
       let RotationGeneration:number = 1
       const Randomtiming: number = Math.random() * 6
-      setInterval(() => {
+      setTimeout(() => {
         console.log(this._Easing(index,1,5,60))
         this.wheel.style.transition =  `transform ${Randomtiming * 1.10 * RotationGeneration / 10}ms`
         this.wheel.style.transform = `rotate(${this._Easing(index,1,360,Randomtiming / 10)}deg)`
