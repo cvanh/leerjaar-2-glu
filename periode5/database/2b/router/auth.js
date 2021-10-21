@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const jsonParser = bodyParser.json();
 
 const mysql = require("@vlasky/mysql");
+const CreateNewUUID = require("../utils/CreateNewUUID.js");
+const authcheck = require("../utils/authcheck");
 require("dotenv").config();
 var conn = mysql.createConnection({
   host: process.env.host, // ip of mysql server
@@ -29,4 +31,12 @@ router.post("/AuthGetUserToken", jsonParser, async (req, res) => {
     }
   );
 });
+router.post("/adduser", jsonParser,async (req,res) =>{
+  const NewUserToken = CreateNewUUID();
+  await authcheck(req,res,()=>{
+    conn.query(`INSERT INTO users (id, username, password, token, permission) VALUES (NULL, '${req.body.username}', '${req.body.password}', '${NewUserToken}', '0');`)
+    res.send().status(200)
+  })
+})
+
 module.exports = router;

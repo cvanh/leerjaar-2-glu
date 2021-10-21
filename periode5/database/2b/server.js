@@ -29,7 +29,7 @@ conn.connect(function (err) {
 });
 
 app.get("/read/:id",jsonParser, async (req, res) => {
-  await authcheck(req,()=>{
+  await authcheck(req,res,()=>{
     conn.query(
       "SELECT * FROM `product` WHERE id = " + parseInt(req.params.id),
       (error, results, fields) => {
