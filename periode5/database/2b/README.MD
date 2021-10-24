@@ -43,6 +43,8 @@ Aan jou nu de taak om deze startup code uit te breiden met het volgende:
 
     [yes] Een product verwijderen uit een database-tabel
 
+    [] REFACTOR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
+
 Dit mag door middel van parameters aan de API-URL mee te sturen, maar als je jezelf wilt uitdagen dan is het mooi als er een CMS is met een formulier die de data naar de API stuurt, en een respons op het scherm weergeeft.
 
 #### opdracht 3
@@ -64,12 +66,12 @@ Net zoals bij product maken we voor access ook de benodigde bestanden aan. Breid
 In access.php maak je de class aan naar het voorbeeld van product. Lees de code goed en probeer deze te begrijpen!
 
 // maak in access.php de volgende code:
-{hier staat orgineel code van de elo}
+{hier staat orgineele code van de elo}
 
 Om na te gaan of deze class werkt, maak je een test-functie. Zo'n test-functie is eigenlijk een unittest. Je maakt een nieuw bestand in de map access en noemt die access_test.php. Zie onderstaande code.
 
 // maak in access_test.php de volgende code:
-{hier staat orgineel code van de elo}
+{hier staat orgineele code van de elo}
 
 De volgende stap is het toevoegen van de controle aan de API. Hoe zou jij dat doen?
 

@@ -1,0 +1,2 @@
+GET
+	https://onlyfans.com/api2/v2/posts?limit=10&offset=0&skip_users_dups=1&format=infinite

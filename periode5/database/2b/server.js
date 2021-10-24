@@ -46,6 +46,9 @@ app.get("/read/:id",jsonParser, async (req, res) => {
   })
 });
 
+/**
+ * @description add a product into the database
+ */
 app.post("/add", jsonParser, async (req, res) => {
   console.log(req.body);
   conn.query(`INSERT INTO product (category_id, naam, beschrijving, prijs, toegevoegd_op, gewijzigd_op) VALUES ( '${req.body.category_id}', '${req.body.naam}', '${req.body.beschrijving}', '${req.body.prijs}', '${req.body.toegevoegd_op}', '${req.body.gewijzigd_op}')`);
