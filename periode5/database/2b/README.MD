@@ -78,6 +78,17 @@ De volgende stap is het toevoegen van de controle aan de API. Hoe zou jij dat do
 En de stap daarna is het controleren op zowel de apikey als de user.
 
 
+### extra bs voor opdracht 2 bc of f
+Wat zijn de eisen voor het inleveren van de opdracht API?
+- Je stuurt een e-mail aan Jan van Os en verwerkt daarin de volgende onderdelen:
+- Je voegt een URL toe voor het "toevoegen van een product".
+- Je voegt een URL toe voor het "updaten van een product".
+- Je voegt een URL toe voor het "verwijderen van een product".
+- Je voegt een URL toe waarin een dump te zien is van de productentabel.
+- Je voegt als eerste product van de productentabel je eigen naam toe.
+- Je voegt een URL toe van het GITHUB account waar de API te vinden is.
+- Je voegt een URL toe van jouw GLUWEB (of alternatief) waar de API op draait en werkend te zien is.
+
 ###<a id='curl'></a> testing curls url endpoints
 
 auth: get token on id basis
