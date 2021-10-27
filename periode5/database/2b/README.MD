@@ -94,14 +94,14 @@ Wat zijn de eisen voor het inleveren van de opdracht API?
 auth: get token on id basis
 `curl -X POST localhost:8082/auth/AuthGetUserToken -d '{"username":"pieter","password":"klein"}' -H "Content-Type: application/json""`
 auth: add user
-`curl -X POST localhost:8082/auth/adduser -H "Content-Type: application/json" -d '{"username":"joost","password":"PuppYLOver2021"}' -H "token:asdasdwijIUHIULHDFoiu"`
+`curl -X POST localhost:8082/auth/adduser -H "Content-Type: application/json" -d '{"username":"joost","password":"PuppYLOver2021"}' -H "token:TOKEN"`
 
 
 create 
 `curl -X POST localhost:8082/add -H "Content-Type: application/json" -d '{"category_id":"1","gewijzigd_op" : "2008-11-11 13:23:44","toegevoegd_op" : "2008-11-11 13:23:44","prijs": "2","beschrijving" : "3","naam" : "4"}'`
 
 read 
-`curl localhost:8082/read/ID -H "token:asdasdwijIUHIULHDFoiu"`
+`curl localhost:8082/read/ID -H "token:TOKEN"`
 
 updating something:
 `curl -X POST localhost:8082/update -H "Content-Type: application/json" -d '{"row":"prijs","value":"9.00","id":"1"}'`

@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const bodyParser = require("body-parser");
 const jsonParser = bodyParser.json();
+const NodeRSA = require('node-rsa');
+const rsakey = process.env.rsakey
+const key = new NodeRSA({rsakey:512});
 
 const mysql = require("@vlasky/mysql");
 const CreateNewUUID = require("../utils/CreateNewUUID.js");
@@ -26,7 +29,8 @@ router.post("/AuthGetUserToken", jsonParser, async (req, res) => {
         res.status(204).send('error');
       } else {
         // found something
-        res.status(200).send(results[0].token);
+        const encrypted = key.encrypt(results[0].token, 'base64');
+        res.status(200).send(encrypted);
       }
     }
   );
