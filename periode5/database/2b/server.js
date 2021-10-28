@@ -36,7 +36,7 @@ app.get("/read/:id",jsonParser, async (req, res) => {
         console.log(results);
         if (results.length === 0) { // result is a array and if it array is empty it is length is 0
           // nothing found sending http code 204 for no content
-          res.status(204).send(results);
+          res.status(g).send(results);
         } else {
           // found something
           res.status(200).send(results);
