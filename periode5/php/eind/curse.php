@@ -1,6 +1,13 @@
 <?php
+/**
+ * class with all the functions for cursecheck
+ */
 class Curse {
     protected int $CurseBump;
+    /**
+     * @function _construct
+     * @param $Sentence string ,
+     */
     function __construct(
         $Sentence,
         $CursewordsList,
@@ -8,11 +15,15 @@ class Curse {
         ){
         $this->CurseCheck($Sentence,$CursewordsList,$CurseBump);
     }
+    /**
+     * @param 
+     */
     private function CurseCheck($Sentence,$CursewordsList,$CurseBump) {
         $Words = $this->SplitSentence($Sentence);
         $good = "bleep";
         echo str_ireplace($CursewordsList,$good,$Sentence);
     }
+
     // 3
     private function SplitSentence($Sentence){
         $t = $this->FilterSentence($Sentence);
@@ -20,6 +31,7 @@ class Curse {
         // var_dump($Words);
         return $Words;
     }
+
     private function FilterSentence($Sentence){
         return strtolower($Sentence);        
     }
