@@ -18,7 +18,7 @@ const key = new NodeRSA({rsakey:512});
  * @param {callback} callback the function that will be excuted when the token is authenticated
  */
 async function authcheck(req,res, callback) {
-  const DecryptedToken = key.decrypt(req.headers["token"], 'utf8');
+  const DecryptedToken = key.decrypt(req.headers["token"], 'base64');
   await conn.query( // the query looks for a user with the matching token
     `SELECT * FROM users WHERE token = '${DecryptedToken}'`,
     (error, results, fields) => {

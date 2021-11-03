@@ -92,7 +92,11 @@ Wat zijn de eisen voor het inleveren van de opdracht API?
 ###<a id='curl'></a> testing curls url endpoints
 
 auth: get token on id basis
-`curl -X POST localhost:8082/auth/AuthGetUserToken -d '{"username":"pieter","password":"klein"}' -H "Content-Type: application/json""`
+`curl -X POST localhost:8082/auth/AuthGetUserToken -d '{"username":"pieter","password":"klein"}' -H "Content-Type: application/json"`
+
+then you will get a base64 encoded response as seen here:
+`dJq1xIyxfKE1WT0+k53+/WRTmHEW90IDuonDqba8efIHqpLtg0b9rs+jAuXtSiCkIWBhhQZYA4dPaqSpT06sQ6BE54MNqyG+cvmIzcfNUosrVvBxs2Xk8r/84+3ym/wcn5QcUexQQBsKNQCQJ0ORuOBhFHLSeCyzv6xopRRcpcMTTaM2NwaNc/Itr3nrA5GryV16FHiclsf0WX38AFlhNrlYDbZqhSLY2EzN4h4DzobvGWsdbBzlzHP5H4gPWH1EMFnAt7EBMbFCO/KA9ncWLm80caFmGqm2v2WTUny6pN0tFfe8S+kf2mlfokpPv+Ix1dBpJLK6G/21R1Dv1CHYzA==`
+
 auth: add user
 `curl -X POST localhost:8082/auth/adduser -H "Content-Type: application/json" -d '{"username":"joost","password":"PuppYLOver2021"}' -H "token:TOKEN"`
 
