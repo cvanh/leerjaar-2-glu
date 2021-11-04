@@ -1,5 +1,6 @@
 dick in toaster
 
+http://constantijn.gov:8082/curse.php?cursecheckvalue=1&sentence=kanker+kat+tering+kaas+nanker 
 ### assignment 
 
 

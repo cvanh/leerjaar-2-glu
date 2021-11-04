@@ -17,6 +17,7 @@ class Curse
     ) {
         $this->CurseCheck($Sentence, $CursewordsList, $CurseBump);
         $CursewordsList = $this->GetCurseWords();
+        // echo $this->CursewordsList;
     }    
     /**
      * CurseCheck
@@ -32,13 +33,11 @@ class Curse
 
         switch ($CurseBump) {
             case '1':
-                echo "a";
                 // 1 = Alle mogelijk scheldwoorden filteren,  
                 $t = $this->FilterSentence($Sentence);
                 echo str_ireplace($CursewordsList, $good, $t);
                 break;
             case '2':
-                echo "b";
                 //     2 = Alleen goed geschreven scheldwoorden 
                 echo str_replace($CursewordsList, $good, $Sentence);
 
@@ -100,7 +99,7 @@ class Curse
             return $row;
           }
         } else {
-          var_dump($result);
+        //   var_dump($result);
         //   echo "0 results";
         }
         $conn->close();
@@ -110,8 +109,8 @@ class Curse
 // $Sentence = "de KaNker poes springt uit de kut boom met zijn tering pootjes";
 
 // get the data from the post body
-$Sentence = $_POST['sentence'];
-$CursewordsList = ["kanker", "kaas", "kut", "tering"];
+$Sentence = $_GET['sentence'];
+// $CursewordsList = ["kanker", "kaas", "kut", "tering"];
 $CurseBump = $_GET["cursecheckvalue"];
 
 $lihfds = new Curse($Sentence, $CursewordsList, $CurseBump);
