@@ -75,7 +75,7 @@ class Curse
     {
         return strtolower($Sentence);
     }
-    private function GetCurseWords()
+    private function GetCurseWords() // todo move this shit in a other function but fuckit
     {
         $servername = "localhost";
         $username = "kaas";
@@ -92,7 +92,7 @@ class Curse
         
         $sql = "SELECT word FROM `cursewords`";
         $result = $conn->query($sql);
-        var_dump($result);
+        // var_dump($result);
         if ($result->num_rows > 0) {
           // output data of each row
           while($row = $result->fetch_assoc()) {
@@ -104,13 +104,31 @@ class Curse
         }
         $conn->close();
     }
+    public function DBinsert($word,$serverity){ 
+        $servername = "localhost";
+        $username = "kaas";
+        $password = "kaas";
+        $dbname = "apiopdracht";
+        
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+        }
+        
+        $sql = `INSERT INTO 'cursewords' ('id', 'word', 'severity', 'aproved') VALUES (NULL, '{$word}', '{$serverity}', '1');`;
+        $result = $conn->query($sql);
+        $conn->close();
+    }
 }
 
-// $Sentence = "de KaNker poes springt uit de kut boom met zijn tering pootjes";
 
 // get the data from the post body
-$Sentence = $_GET['sentence'];
-// $CursewordsList = ["kanker", "kaas", "kut", "tering"];
-$CurseBump = $_GET["cursecheckvalue"];
+// $Sentence = $_GET['sentence'];
+// $CurseBump = $_GET["cursecheckvalue"];
 
-$lihfds = new Curse($Sentence, $CursewordsList, $CurseBump);
+$na = new Curse($Sentence, $CursewordsList, $CurseBump);
+
+$this->na.DBinsert('bah',10);
+?>
