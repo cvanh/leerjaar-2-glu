@@ -98,18 +98,18 @@ then you will get a base64 encoded response as seen here:
 `dJq1xIyxfKE1WT0+k53+/WRTmHEW90IDuonDqba8efIHqpLtg0b9rs+jAuXtSiCkIWBhhQZYA4dPaqSpT06sQ6BE54MNqyG+cvmIzcfNUosrVvBxs2Xk8r/84+3ym/wcn5QcUexQQBsKNQCQJ0ORuOBhFHLSeCyzv6xopRRcpcMTTaM2NwaNc/Itr3nrA5GryV16FHiclsf0WX38AFlhNrlYDbZqhSLY2EzN4h4DzobvGWsdbBzlzHP5H4gPWH1EMFnAt7EBMbFCO/KA9ncWLm80caFmGqm2v2WTUny6pN0tFfe8S+kf2mlfokpPv+Ix1dBpJLK6G/21R1Dv1CHYzA==`
 
 auth: add user
-`curl -X POST localhost:8082/auth/adduser -H "Content-Type: application/json" -d '{"username":"joost","password":"PuppYLOver2021"}' -H "token:TOKEN"`
+`curl -X POST localhost:8082/auth/adduser -H "Content-Type: application/json" -d '{"username":"joost","password":"PuppYLOver2021"}' -H "token:cP5HEbloRvvxvXiRQhsVZvkqgPLBeaEKcrdY2TyW41z5X0MfgI0G0On+vIlZ+6RufehDpo8dfEBclc/UilXwG9KHXzFHZXQLKuCLicqgAWNidbOtI4+3IRHig5X6w85Z0x4dCAz2yPGIkt+XizsCO8FDkmpaVZZoypI/XXaAcs2oAa1NFNf0QwLNEkSMKs8Yy80DaKF0INTzuOFxSKeuj0Nyfxw/8lVJpuhKBkha0a8jumqTZWnMUdHgxAIot9LAOYeTWt2Kul2KoZJsDCzsBSo59sWWI+TnlUPwgDrY4CJBJhl5idQX6SYb76zrzOKNI3+DeD0igXFG4pICltHrtw=="`
 
 
 create 
 `curl -X POST localhost:8082/add -H "Content-Type: application/json" -d '{"category_id":"1","gewijzigd_op" : "2008-11-11 13:23:44","toegevoegd_op" : "2008-11-11 13:23:44","prijs": "2","beschrijving" : "3","naam" : "4"}'`
 
 read 
-`curl localhost:8082/read/ID -H "token:TOKEN"`
+`curl localhost:8082/api2/product/read/1 -H "token:XkiI+YXTh1O3FQB7FbZdFIWPZvrcFECjCoC1KI9YVTPlL5YuIfUwx1qG5eaqSA2WS9uuIBjgz/b/s1UG91N93g==" -i`
 
 updating something:
-`curl -X POST localhost:8082/update -H "Content-Type: application/json" -d '{"row":"prijs","value":"9.00","id":"1"}'`
+`curl -X POST localhost:8082/api2/product/update -H "Content-Type: application/json" -d '{"row":"prijs","value":"9.00","id":"1"}'`
 
 delete from X, x being the value of id
-`curl localhost:8082/delete/product/X`
+`curl localhost:8082/api2/product/delete/product/X`
 

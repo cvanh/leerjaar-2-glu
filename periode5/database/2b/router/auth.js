@@ -3,8 +3,16 @@ const router = express.Router();
 const bodyParser = require("body-parser");
 const jsonParser = bodyParser.json();
 const NodeRSA = require('node-rsa');
-const rsakey = process.env.rsakey
-const key = new NodeRSA({rsakey:512});
+const rsakey = `-----BEGIN RSA PRIVATE KEY-----
+MIIBOQIBAAJAZC9NchDx6jVzFXOEZSr4ovkdrIQKREoPFR+/nFRgbVf22j09teEq
+Kv9kQCotJ0kyIJKF3SR/DF3TTQaU8swn3QIDAQABAkA4bGOjsGNu0reEB1EzYSYz
+MzZBKQRXPZaNARp7QxIjwkhjBFNYawfVyjePKrIdn8Hqe3jDmapgZUHYe3MdRBPB
+AiEApjGPNDWGK6t/tDKRgLzf1PaMxOV/dBJ/1NLaUnLCFxUCIQCaUmTHXtNCS/AQ
+3fzDDUdXEqcySm1j6ARY6GpL2Dn/qQIhAIQSJFx4IIy5uD2KZijpb/M8jze1raif
+PujxO0CEJAvVAiBcVDNrfPZUUe6diNLzN/yYwdY6poDwJx6Cuvrtyb5ZkQIgUcOj
+aqK5li0Cvy4F0Vww0G9YiWqbuBhY4iPk9tWQh+g=
+-----END RSA PRIVATE KEY-----`; // sue me bitches
+const key = new NodeRSA(rsakey);
 
 const mysql = require("@vlasky/mysql");
 const CreateNewUUID = require("../utils/CreateNewUUID.js");
