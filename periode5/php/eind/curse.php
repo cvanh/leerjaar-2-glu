@@ -6,7 +6,7 @@
 class Curse
 {
     protected int $CurseBump; 
-    private $CursewordsList = array();
+    private $CursewordsList = [];
     /**
      * __construct
      */
@@ -15,9 +15,11 @@ class Curse
         $CursewordsList,
         $CurseBump
     ) {
+        $CursewordsList = ["kanker","kut","tyfus"];
+
         $this->CurseCheck($Sentence, $CursewordsList, $CurseBump);
-        $CursewordsList = $this->GetCurseWords();
-        // echo $this->CursewordsList;
+        // $CursewordsList = $this->GetCurseWords();
+        var_dump($this->CursewordsList);
     }    
     /**
      * CurseCheck
@@ -75,6 +77,9 @@ class Curse
     {
         return strtolower($Sentence);
     }
+    /**
+     * GetCurseWords
+     */
     private function GetCurseWords() // todo move this shit in a other function but fuckit
     {
         $servername = "localhost";
@@ -92,18 +97,22 @@ class Curse
         
         $sql = "SELECT word FROM `cursewords`";
         $result = $conn->query($sql);
-        // var_dump($result);
+
         if ($result->num_rows > 0) {
           // output data of each row
           while($row = $result->fetch_assoc()) {
-            return $row;
+            echo $row["word"];
+            echo "<br>";
           }
         } else {
         //   var_dump($result);
-        //   echo "0 results";
+          echo "0 results";
         }
         $conn->close();
     }
+    /** 
+     * DBinsert
+     */
     public function DBinsert($word,$serverity){ 
         $servername = "localhost";
         $username = "kaas";
@@ -117,18 +126,18 @@ class Curse
           die("Connection failed: " . $conn->connect_error);
         }
         
-        $sql = `INSERT INTO 'cursewords' ('id', 'word', 'severity', 'aproved') VALUES (NULL, '{$word}', '{$serverity}', '1');`;
-        $result = $conn->query($sql);
+        $sql = "INSERT INTO `cursewords` (`id`, `word`, `severity`, `aproved`) VALUES (NULL, '${word}', '${serverity}', '1');";
+        var_dump($sql);
+        $conn->query($sql);
         $conn->close();
     }
 }
 
 
 // get the data from the post body
-// $Sentence = $_GET['sentence'];
-// $CurseBump = $_GET["cursecheckvalue"];
+$Sentence = $_GET['sentence'];
+$CurseBump = $_GET["CurseBump"];
 
 $na = new Curse($Sentence, $CursewordsList, $CurseBump);
 
-$this->na.DBinsert('bah',10);
-?>
+// $na->DBinsert('bah',10);
