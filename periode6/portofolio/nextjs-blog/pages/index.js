@@ -1,5 +1,8 @@
 function Page({ stars }) {
-  return <div>Next stars: {stars}</div>
+  return <div>
+    <div>Next stars: {stars}</div>
+    <a href="/admin/createblog">kaas</a>
+  </div>
 }
 
 Page.getInitialProps = async (ctx) => {
