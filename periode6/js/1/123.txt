@@ -1,0 +1,38 @@
+1.
+react is een framework voor het bouwen van websites
+
+je kan single page app's bouwen met react 
+
+het is gemaakt door facebook om sneller websites te bouwen en schaaalbaar 
+
+facebook
+
+snel schaalbaar en maakkelijk
+
+het verschil tussen react en react native is dat react native zijn eigen componenten heeft die vertaald worden naar ios en android componenten 
+
+2. 
+codesandbox
+jcomplete
+codepen
+playcode 
+
+snel react gebruiken zonder het te downloaden
+
+als je snel iets wilt laten zien of delen zodat de ontvanger zelf kan experimenteeren
+
+allemaal 
+
+het liefst zelf hosted maar anders codepen
+
+3. 
+op google en duckduckgo
+
+met lezen
+
+de documentatie en stackoverflow
+
+op de react site
+
+stackoverflow
+
