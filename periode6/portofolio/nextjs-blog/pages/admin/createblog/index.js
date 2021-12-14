@@ -1,3 +1,4 @@
+import React from 'react'
 import Admin from "../admin.styled";
 
 function CreateBlog(){

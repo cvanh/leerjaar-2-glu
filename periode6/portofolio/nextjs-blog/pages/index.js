@@ -1,3 +1,4 @@
+import React from 'react'
 function Page({ stars }) {
   return <div>
     <div>Next stars: {stars}</div>
