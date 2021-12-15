@@ -1,38 +1,25 @@
-import { ThemeProvider, Preflight } from "@xstyled/styled-components";
-import { Routes } from "react-router-dom";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Link,
-  Redirect,
-} from "react-router-dom";
-import Home from "../components/Home";
-import Test from "../components/Test";
-import theme from "../utils/theme";
+import { container } from "@xstyled/styled-components";
+import Header from "../components/header/Header";
 
-function Page({Component}) {
-  // if (typeof window === 'undefined') {
-  //   return null
-  // }
-
+function Page() {
   return (
-    <ThemeProvider theme={theme}>
-
-      <Router>
-          <Switch>
-
-        <Route path="/" component={Home}/>
-      
-        <Route path="/home" component={Home} />
-      
-        <Route path="/test" component={Test} />
-        
-        </Switch>
-      </Router>
-
-    </ThemeProvider>
-  );
+   <>
+   {/* <Header/> */}
+    <container>
+    <div>
+      {
+        postMessage
+      }
+    </div>
+    </container>
+   </>
+  )
 }
+Page.getInitialProps = async (ctx) => {
+  const res = await fetch('https://api.github.com/repos/vercel/next.js')
+  const json = await res.json()
+  return { stars: json.stargazers_count }
+}
+
 
 export default Page;

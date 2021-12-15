@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@xstyled/styled-components": "^3.1.2",
+    "dotenv": "^10.0.0",
     "mysql": "^2.18.1",
     "next": "latest",
     "react": "^17.0.2",
