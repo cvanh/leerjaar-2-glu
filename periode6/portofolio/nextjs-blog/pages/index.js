@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // function Page({ stars }) {
 //   return <div>Next stars: {stars}</div>
 // }
@@ -11,6 +12,15 @@
 import { useRouter } from "next/router";
 import Home from "../components/Home";
 import Test from "../components/Test";
+=======
+import React from 'react'
+function Page({ stars }) {
+  return <div>
+    <div>Next stars: {stars}</div>
+    <a href="/admin/createblog">kaas</a>
+  </div>
+}
+>>>>>>> 29e50486d9e1fd000d20f886652d90a348e7e7be
 
 function Page({ uri, page, error, cookies, preview  }) {
   const getPageBasedOnTemplate = (template) => {

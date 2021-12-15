@@ -1,3 +1,4 @@
+import React from 'react'
 import DatabaseQuery from "../../../utils/database"
 
 export default function handler(req, res) {

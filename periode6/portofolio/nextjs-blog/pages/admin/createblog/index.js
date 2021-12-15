@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import Admin from "../../../styled/admin.styled";
+=======
+import React from 'react'
+import Admin from "../admin.styled";
+>>>>>>> 29e50486d9e1fd000d20f886652d90a348e7e7be
 
 function CreateBlog(){
     return(
