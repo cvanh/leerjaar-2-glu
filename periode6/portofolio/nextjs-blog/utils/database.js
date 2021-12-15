@@ -1,5 +1,5 @@
 // const mysql = require("mysql");
-
+require('dotenv').config()
 // const connection = mysql.createConnection({
 //   host: "83.162.165.175",
 //   user: "cvanh",
@@ -24,10 +24,10 @@ class Database {
   }
   CreateConnection() {
     const connection = mysql.createConnection({
-      host: "83.162.165.175",
-      user: "cvanh",
-      password: "XJeuLU75Vp2EZbM",
-      database: "portofolio",
+      host: process.env.host,
+      user: process.env.user,
+      password: process.env.password,
+      database: process.env.database,
     });
     return connection
   }

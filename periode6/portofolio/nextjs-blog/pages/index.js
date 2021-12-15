@@ -1,5 +1,6 @@
 import { container } from "@xstyled/styled-components";
 import Header from "../components/header/Header";
+const mysql = require("mysql");
 
 function Page() {
   return (
@@ -8,7 +9,7 @@ function Page() {
     <container>
     <div>
       {
-        postMessage
+        console.log(stars)
       }
     </div>
     </container>
@@ -16,9 +17,22 @@ function Page() {
   )
 }
 Page.getInitialProps = async (ctx) => {
-  const res = await fetch('https://api.github.com/repos/vercel/next.js')
-  const json = await res.json()
-  return { stars: json.stargazers_count }
+  const connection = mysql.createConnection({
+    host: process.env.host,
+    user: process.env.user,
+    password: process.env.password,
+    database: process.env.database,
+  });
+
+  connection.connect();
+
+  const data = connection.query('SELECT * FROM `posts` ', (error, results, fields) => {
+    if (error) throw error;
+  });
+console.log(data)
+  connection.end();
+ 
+  return { stars: data }
 }
 
 

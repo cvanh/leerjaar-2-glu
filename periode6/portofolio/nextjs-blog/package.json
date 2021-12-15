@@ -9,7 +9,7 @@
   "dependencies": {
     "@xstyled/styled-components": "^3.1.2",
     "dotenv": "^10.0.0",
-    "mysql": "^2.18.1",
+    "mysql": "github:mysqljs/mysql",
     "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
