@@ -1,4 +1,4 @@
-// const mysql = require("mysql");
+const mysql = require("mysql");
 require('dotenv').config()
 // const connection = mysql.createConnection({
 //   host: "83.162.165.175",
@@ -36,4 +36,4 @@ class Database {
 
 
 
-module.exports = class Database {
+module.exports = Database 
