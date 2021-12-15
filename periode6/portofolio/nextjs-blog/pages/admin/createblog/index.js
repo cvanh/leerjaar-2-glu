@@ -1,4 +1,4 @@
-import Admin from "../admin.styled";
+import Admin from "../../../styled/admin.styled";
 
 function CreateBlog(){
     return(

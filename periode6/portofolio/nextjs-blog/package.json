@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prod_start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "mysql": "^2.18.1",
