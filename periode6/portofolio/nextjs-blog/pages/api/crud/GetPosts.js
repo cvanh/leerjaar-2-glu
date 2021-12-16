@@ -1,28 +1,16 @@
 import { NextApiHandler } from 'next'
 import { query } from '../../../utils/database'
 
-const handler = async (req, res) => {
-  const { id } = req.query
-  try {
-    if (!id) {
-      return res.status(400).json({ message: '`id` required' })
-    }
-    if (typeof parseInt(id.toString()) !== 'number') {
-      return res.status(400).json({ message: '`id` must be a number' })
-    }
+const handler = async (req, res) => {  
     const results = await query(
       `
-      SELECT id, title, content
-      FROM entries
-      WHERE id = ?
-    `,
-      id
+      SELECT * FROM 'portofolio'
+
+    `
     )
 
-    return res.json(results[0])
-  } catch (e) {
-    res.status(500).json({ message: e.message })
-  }
+    return res.json(results)
+ 
 }
 
 export default handler

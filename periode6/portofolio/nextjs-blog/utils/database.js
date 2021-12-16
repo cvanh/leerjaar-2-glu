@@ -1,4 +1,8 @@
 import mysql from 'serverless-mysql'
+const path = require('path')
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
+
+console.log(process.env.MYSQL_USERNAME);
 
 export const db = mysql({
   config: {

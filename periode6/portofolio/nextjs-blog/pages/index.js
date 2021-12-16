@@ -10,23 +10,23 @@ function Page() {
     <container>
     <div>
       
-    <Post.card>
+    <div>
       <img src="./kaas">
-
+    {console.log(stars)}
       </img>
 
-    </Post.card>
+    </div>
 
     </div>
     </container>
    </>
   )
 }
-// Page.getInitialProps = async (ctx) => {
-//   const res = await fetch('http://localhost:3000/api/crud/GetPosts')
-//   const json = await res.json()
-//   return { stars: json.stargazers_count }
-// }
+Page.getInitialProps = async (ctx) => {
+  const res = await fetch('http://localhost:3000/api/crud/GetPosts')
+  const json = await res.json()
+  return { stars: json }
+}
 
 
 export default Page;
