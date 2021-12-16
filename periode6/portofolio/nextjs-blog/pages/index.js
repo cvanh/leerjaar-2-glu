@@ -4,22 +4,22 @@ import Container from "../styled/container";
 import Post  from "./index.styled.js"
 // const mysql = require("@vlasky/mysql");
 
-function Page({ stars }) {
+function Page({ data }) {
   return (
     <>
-      {/* <Header/> */}
+      <Header/>
       <Container>
-        <div>
-            {stars.map((i) => {
+        <Post.Field>
+            {data.map((i) => {
               return (
                 <Post.Card>
-                  <Post.Tumbnail src={i.tumbnail}></Post.Tumbnail>
+                  <Post.Tumbnail width="100" src={i.tumbnail}/>
                   <div>{i.id}</div>
                   <div>{i.title}</div>
                 </Post.Card>
               );
             })}
-        </div>
+            </Post.Field>
       </Container>
     </>
   );
@@ -28,7 +28,7 @@ Page.getInitialProps = async (ctx) => {
   const res = await fetch("http://localhost:3000/api/crud/GetPosts");
   const json = await res.json();
   console.log(json);
-  return { stars: json };
+  return { data: json };
 };
 
 export default Page;

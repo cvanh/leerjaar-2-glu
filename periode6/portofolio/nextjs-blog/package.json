@@ -9,6 +9,7 @@
   "dependencies": {
     "@vlasky/mysql": "^2.18.5",
     "@xstyled/styled-components": "^3.1.2",
+    "babel-plugin-styled-components": "^2.0.2",
     "dotenv": "^10.0.0",
     "mysql": "github:mysqljs/mysql",
     "net": "^1.0.2",
