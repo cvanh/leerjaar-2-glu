@@ -1,4 +1,4 @@
-function Test(){
+function Test({ stars }){
     return(
      <div>Next stars: {stars}</div>
     )
