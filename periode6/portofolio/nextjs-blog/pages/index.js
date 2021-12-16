@@ -1,6 +1,7 @@
 import { container } from "@xstyled/styled-components";
 import Header from "../components/header/Header";
-const mysql = require("mysql");
+const Post = require("./index.styled.js")
+// const mysql = require("@vlasky/mysql");
 
 function Page() {
   return (
@@ -8,33 +9,24 @@ function Page() {
    {/* <Header/> */}
     <container>
     <div>
-      {
-        console.log(stars)
-      }
+      
+    <Post.card>
+      <img src="./kaas">
+
+      </img>
+
+    </Post.card>
+
     </div>
     </container>
    </>
   )
 }
-Page.getInitialProps = async (ctx) => {
-  const connection = mysql.createConnection({
-    host: process.env.host,
-    user: process.env.user,
-    password: process.env.password,
-    database: process.env.database,
-  });
-
-  connection.connect();
-
-  const data = connection.query('SELECT * FROM `portofolio` ', (error, results, fields) => {
-    if (error) throw error;
-    console.log(data)
-
-    return { stars: data }
-  
-  });
-  connection.end();
-}
+// Page.getInitialProps = async (ctx) => {
+//   const res = await fetch('http://localhost:3000/api/crud/GetPosts')
+//   const json = await res.json()
+//   return { stars: json.stargazers_count }
+// }
 
 
 export default Page;

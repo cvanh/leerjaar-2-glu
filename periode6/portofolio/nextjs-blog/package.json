@@ -7,6 +7,7 @@
     "prod_start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "@vlasky/mysql": "^2.18.5",
     "@xstyled/styled-components": "^3.1.2",
     "dotenv": "^10.0.0",
     "mysql": "github:mysqljs/mysql",
