@@ -26,13 +26,14 @@ Page.getInitialProps = async (ctx) => {
 
   connection.connect();
 
-  const data = connection.query('SELECT * FROM `posts` ', (error, results, fields) => {
+  const data = connection.query('SELECT * FROM `portofolio` ', (error, results, fields) => {
     if (error) throw error;
+    console.log(data)
+
+    return { stars: data }
+  
   });
-console.log(data)
   connection.end();
- 
-  return { stars: data }
 }
 
 
