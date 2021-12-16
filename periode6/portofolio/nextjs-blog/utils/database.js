@@ -1,39 +1,24 @@
-// const mysql = require("mysql");
-require('dotenv').config()
-// const connection = mysql.createConnection({
-//   host: "83.162.165.175",
-//   user: "cvanh",
-//   password: "XJeuLU75Vp2EZbM",
-//   database: "portofolio",
-// });
+import mysql from 'serverless-mysql'
 
-// connection.connect();
+export const db = mysql({
+  config: {
+    host: process.env.MYSQL_HOST,
+    database: process.env.MYSQL_DATABASE,
+    user: process.env.MYSQL_USERNAME,
+    password: process.env.MYSQL_PASSWORD,
+    port: parseInt(process.env.MYSQL_PORT),
+  },
+})
 
-// function DatabaseQuery(query) {
-//   connection.query(query, (error, results, fields) => {
-//     if (error) throw error;
-//   });
-// }
-
-// // connection.end();
-
-class Database {
-  conn;
-  constructor() {
-    this.conn = this.CreateConnection;
+export async function query(
+  q,
+  values
+) {
+  try {
+    const results = await db.query(q, values)
+    await db.end()
+    return results
+  } catch (e) {
+    throw Error(e.message)
   }
-  CreateConnection() {
-    const connection = mysql.createConnection({
-      host: process.env.host,
-      user: process.env.user,
-      password: process.env.password,
-      database: process.env.database,
-    });
-    return connection
-  }
-
 }
-
-
-
-module.exports = class Database {

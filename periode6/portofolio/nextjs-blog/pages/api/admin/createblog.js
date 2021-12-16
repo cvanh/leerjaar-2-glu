@@ -5,7 +5,7 @@ export default function handler(req, res) {
   const data = JSON.stringify(req.body)
   console.log(data)
   DatabaseQuery(`
-  INSERT INTO posts (id, title, date, body) VALUES (NULL, '${req.body.title}', '${new Date()}', '${req.body.body}');
+  SELECT * FROM posts
   `)
 
 
