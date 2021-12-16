@@ -18,6 +18,7 @@
     "react-router-dom": "^6.1.1",
     "serverless-mysql": "^1.5.4",
     "styled-components": "^5.3.3",
+    "styled-system": "^5.1.5",
     "tls": "^0.0.1"
   },
   "devDependencies": {

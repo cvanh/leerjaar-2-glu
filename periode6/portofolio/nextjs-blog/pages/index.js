@@ -1,5 +1,6 @@
 import { container } from "@xstyled/styled-components";
 import Header from "../components/header/Header";
+import Container from "../styled/container";
 import Post  from "./index.styled.js"
 // const mysql = require("@vlasky/mysql");
 
@@ -7,21 +8,19 @@ function Page({ stars }) {
   return (
     <>
       {/* <Header/> */}
-      <container>
+      <Container>
         <div>
-          <div>
             {stars.map((i) => {
               return (
                 <Post.Card>
-                  <img src={i.tumbnail}></img>
+                  <Post.Tumbnail src={i.tumbnail}></Post.Tumbnail>
                   <div>{i.id}</div>
                   <div>{i.title}</div>
                 </Post.Card>
               );
             })}
-          </div>
         </div>
-      </container>
+      </Container>
     </>
   );
 }
