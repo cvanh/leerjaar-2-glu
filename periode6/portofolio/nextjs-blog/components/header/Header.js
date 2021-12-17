@@ -1,11 +1,15 @@
-function Header(){
-    return(
-        <div>
-            <div>a</div>
-            <a href="/admin/createblog">admin create blog</a>
+import Head from "./Head.styled";
 
-        </div>
-    )
-
+function Header() {
+  return (
+    <Head.Header>
+      <div>a</div>
+      <Head.Links>
+        <Head.LinkBox href="/">home</Head.LinkBox>
+        <Head.LinkBox href="/contact/">contact</Head.LinkBox>
+        <Head.LinkBox href="/admin/">login</Head.LinkBox>
+      </Head.Links>
+    </Head.Header>
+  );
 }
-export default Header
+export default Header;
