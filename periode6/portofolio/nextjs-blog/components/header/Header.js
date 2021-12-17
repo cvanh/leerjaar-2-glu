@@ -1,9 +1,11 @@
 import Head from "./Head.styled";
+import Logo from "../../public/logo.png";
+
 
 function Header() {
   return (
     <Head.Header>
-      <div>a</div>
+      <Head.Logo src={Logo}></Head.Logo>
       <Head.Links>
         <Head.LinkBox href="/">home</Head.LinkBox>
         <Head.LinkBox href="/contact/">contact</Head.LinkBox>

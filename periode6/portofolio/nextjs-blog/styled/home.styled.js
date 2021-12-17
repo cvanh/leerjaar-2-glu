@@ -18,7 +18,7 @@ const CardBig = styled.div`
 `;
 
 const Tumbnail = styled.img`
-  margin-top: 0px;
+  margin-top: -20px;
   width: 100%;
   height: 60%;
 `;
