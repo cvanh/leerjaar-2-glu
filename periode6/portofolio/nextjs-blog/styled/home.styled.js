@@ -1,23 +1,25 @@
 import styled from "styled-components";
 
 const Card = styled.div`
-  border: 1px black solid; 
-  margin: 5px; 
+  overflow: hidden;
+  border: 1px black solid;
+  margin: 5px;
   position: relative;
   display: inline-block;
   background-color: gray;
-  height: 50px;
-  width: 15%;
+  height:200px;
+  width: 25%;
 `;
 
 const Tumbnail = styled.img`
   width: 100%;
+  height:60%;
 `;
 
 const Field = styled.div`
-width:70%;
-background-color:blue;
-`
+  width: 70%;
+  background-color: blue;
+`;
 
 const Post = {
   Field,
