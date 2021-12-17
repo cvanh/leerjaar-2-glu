@@ -1,26 +1,20 @@
-import { ServerStyleSheet } from 'styled-components';
 import styled from "styled-components";
 
 const Card = styled.div`
-  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px black solid;
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
+  overflow: hidden;
 `;
-// const Card = styled.div`
-//   overflow: hidden;
-//   border: 1px black solid;
-//   margin: 5px;
-//   position: relative;
-//   display: inline-block;
-//   background-color: gray;
-//   height:200px;
-//   width: 25%;
-// `;
 
 const CardBig = styled.div`
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
   grid-column-start: 1;
   grid-column-end: 3;
+  overflow: hidden;
 `;
 
 const Tumbnail = styled.img`
@@ -29,11 +23,11 @@ const Tumbnail = styled.img`
 `;
 
 const Field = styled.div`
+  // this is where all the post cards are stored
   width: 70%;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 25% 25% 25%;
   grid-gap: 10px;
-  background-color: #2196f3;
   padding: 10px; ;
 `;
 
