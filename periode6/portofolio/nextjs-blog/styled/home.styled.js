@@ -1,3 +1,4 @@
+import { ServerStyleSheet } from 'styled-components';
 import styled from "styled-components";
 
 const Card = styled.div`
@@ -5,7 +6,6 @@ const Card = styled.div`
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
-  height:200px;
 `;
 // const Card = styled.div`
 //   overflow: hidden;
