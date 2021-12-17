@@ -5,19 +5,34 @@ import Post  from "../styled/home.styled.js"
 // const mysql = require("@vlasky/mysql");
 
 function Page({ data }) {
+  let PostCount = 0; // 
   return (
     <>
       <Header/>
       <Container>
         <Post.Field>
             {data.map((i) => {
-              return (
-                <Post.Card>
-                  <Post.Tumbnail src={i.tumbnail}/>
-                  <div>{i.id}</div>
-                  <div>{i.title}</div>
-                </Post.Card>
-              );
+              PostCount++
+
+              if(PostCount === 1){
+                // this is the first card so it will be extra big
+                return(
+                  <Post.CardBig>
+                    <Post.Tumbnail src={i.tumbnail}/>
+                    <div key={i.id}>{i.id}</div>
+                    <div id={i.title}>{i.title}</div>
+                  </Post.CardBig>
+                )
+
+              } else{
+                return (
+                  <Post.Card>
+                    <Post.Tumbnail src={i.tumbnail}/>
+                    <div>{i.id}</div>
+                    <div>{i.title}</div>
+                  </Post.Card>
+                );
+              }
             })}
             </Post.Field>
       </Container>
