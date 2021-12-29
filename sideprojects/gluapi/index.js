@@ -7,7 +7,7 @@ class GLU {
       headers: {
         "clienttoken": process.env.clienttoken, // 64 char long
         "user-agent": "dick ma balls", // doesnt matter
-        "accesstoken": "cbcf9592-6465-4bba-892c-0650570f916d", // aka X-CSRF-TOKEN
+        "accesstoken": "7ae54c7f-5eff-4983-88bd-b8fe56997e9b", // aka X-CSRF-TOKEN
       },
     };
   }
