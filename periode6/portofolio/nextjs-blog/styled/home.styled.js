@@ -1,20 +1,28 @@
 import styled from "styled-components";
 
-const Card = styled.div`
+const Card = styled.a`
   border: 1px black solid;
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
   overflow: hidden;
+  ::selection {
+    color: none;
+    background: none;
+}
 `;
 
-const CardBig = styled.div`
+const CardBig = styled.a`
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
   grid-column-start: 1;
   grid-column-end: 3;
   overflow: hidden;
+  ::selection {
+    color: none;
+    background: none;
+}
 `;
 
 const Tumbnail = styled.img`
@@ -30,6 +38,10 @@ const Field = styled.div`
   grid-template-columns: 25% 25% 25%;
   grid-gap: 10px;
   padding: 10px; ;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Post = {

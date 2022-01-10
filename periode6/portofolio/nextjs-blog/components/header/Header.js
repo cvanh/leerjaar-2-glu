@@ -2,9 +2,9 @@ import Head from "./Head.styled";
 import LogoFoto from "../../public/logo.png";
 
 function Header() {
-  window.addEventListener("scroll",()=>{
-    console.log('there is a scroll')
-  })
+  // window.addEventListener("scroll",()=>{
+  //   console.log('there is a scroll')
+  // })
   return (
     <Head.Header>
       <Head.Logo></Head.Logo>
@@ -12,6 +12,9 @@ function Header() {
       <Head.Links>
         <a href="/">
           <Head.LinkBox>home</Head.LinkBox>
+        </a>
+        <a href="/about/">
+          <Head.LinkBox>about</Head.LinkBox>
         </a>
         <a href="/contact/">
           <Head.LinkBox>contact</Head.LinkBox>
