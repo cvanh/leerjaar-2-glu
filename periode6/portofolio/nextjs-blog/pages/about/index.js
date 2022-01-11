@@ -1,21 +1,35 @@
-import { container } from "@xstyled/styled-components"
-import Header from "../../components/header/Header"
-import {MainPhoto,Article} from "../../styled/about.styled";
+import { container } from "@xstyled/styled-components";
+import Header from "../../components/header/Header";
+import SocialBar from "../../components/socialbar/socialbar"
+import {
+  Title,
+  MainPhoto,
+  Article,
+  AboutText
+} from "../../styled/about.styled";
 
-
-function About(){
-    return(
-        <>
-        <Header/>
-        <container>
-            <Article>
-            <MainPhoto src="/kokenmetconto.png"/>
-            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  
-            </p>
-            </Article>
-        </container>
-        </>
-    )
+function About() {
+  return (
+    <>
+      <Header />
+      <container>
+        <Article>
+          <Title>Constantijn van Hartesveldt</Title>
+          <AboutText>
+            Ik ben Constantijn van Hartesveldt
+            <br />
+            Je kan mij altijd vinden in de volgende sprint van een project wat 3
+            minuten daarvoor verzonnen had.
+            <br />
+            Ik ben ervaren in javascript en php, ik ben bekend met de principes
+            van scrum en mysql en mongodb
+          </AboutText>
+          <MainPhoto src="/kokenmetconto.png" />
+          <SocialBar/>
+          
+        </Article>
+      </container>
+    </>
+  );
 }
-export default About
+export default About;

@@ -1,27 +1,26 @@
 import Head from "./Head.styled";
 import LogoFoto from "../../public/logo.png";
+import Link from "next/link";
 
 function Header() {
-  // window.addEventListener("scroll",()=>{
-  //   console.log('there is a scroll')
-  // })
   return (
     <Head.Header>
+      
       <Head.Logo></Head.Logo>
 
       <Head.Links>
-        <a href="/">
+        <Link href="/">
           <Head.LinkBox>home</Head.LinkBox>
-        </a>
-        <a href="/about/">
+        </Link>
+        <Link href="/about/">
           <Head.LinkBox>about</Head.LinkBox>
-        </a>
-        <a href="/contact/">
+        </Link>
+        <Link href="/contact/">
           <Head.LinkBox>contact</Head.LinkBox>
-        </a>
-        <a href="/admin/">
+        </Link>
+        <Link href="/admin/">
           <Head.LinkBox>login</Head.LinkBox>
-        </a>
+        </Link>
       </Head.Links>
     </Head.Header>
   );

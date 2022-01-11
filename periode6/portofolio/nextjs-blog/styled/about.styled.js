@@ -2,9 +2,12 @@ import styled from "styled-components";
 import React from 'react';
 
 export const MainPhoto = styled.img`
+    display:inline-block;
+    float: left;
     position: static;
     width: 45%;
-    margin-top: 65px; // just so it isnt in the navbar 
+    margin-right: 20px; 
+    border-radius: 20px;
     @media only screen and (max-width: 868px) {
         backgroud-color: gray;
         width: 100%;
@@ -12,16 +15,21 @@ export const MainPhoto = styled.img`
 `
 
 export const Article = styled.article`
+    padding-top: 65px;
     margin-left:auto;
     margin-right:auto;
-    width:50%;
+    width: 70%;
     @media only screen and (max-width: 868px) {
     width:100%;
     }
 `
 
-// const About = {
-//     MainPhoto,
-// }
+export const Title = styled.div`
+    font-size: xxx-large;
+`
 
-// export default MainPhoto
+export const AboutText = styled.div`
+    width: 50%;
+    display:inline-block;
+`
+

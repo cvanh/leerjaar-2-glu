@@ -5,6 +5,14 @@ import { media, px2rem } from "../utils";
 import theme from "../utils/theme";
 
 const Container = styled(Box)`
+  margin: 0px;
+  @font-face {
+  font-family: 'Roboto Condensed';
+  src: url(/fonts/DarkerGrotesque-Regular.ttf) format('tff'),
+       url(/fonts/DarkerGrotesque-Regular.ttf) format('tff');
+  }
+
+
   width: 100%;
   max-width: ${(props) => props.theme.gridSize};
   background-color: ${(props) =>

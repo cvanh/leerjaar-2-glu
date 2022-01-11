@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Card = styled.a`
+const Card = styled.div`
   border: 1px black solid;
   text-align: center;
   padding: 20px 0;
@@ -12,7 +12,7 @@ const Card = styled.a`
 }
 `;
 
-const CardBig = styled.a`
+const CardBig = styled.div`
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
