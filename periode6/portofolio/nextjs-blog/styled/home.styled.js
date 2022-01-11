@@ -6,10 +6,7 @@ const Card = styled.div`
   padding: 20px 0;
   font-size: 30px;
   overflow: hidden;
-  ::selection {
-    color: none;
-    background: none;
-}
+
 `;
 
 const CardBig = styled.div`
@@ -33,9 +30,11 @@ const Tumbnail = styled.img`
 
 const Field = styled.div`
   // this is where all the post cards are stored
+  margin-left: auto;
+  margin-right:auto;
   width: 70%;
   display: grid;
-  grid-template-columns: 25% 25% 25%;
+  grid-template-columns: 15% 15% 15%;
   grid-gap: 10px;
   padding: 10px; ;
 

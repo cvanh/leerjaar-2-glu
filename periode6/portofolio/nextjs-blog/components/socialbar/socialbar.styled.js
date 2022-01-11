@@ -10,7 +10,6 @@ border-radius: 20px;
 export const Social = styled.img`
   height: 20px;
   margin-left:6px;
-  /* margin-right: 6px; */
 `
 
 export const Text = styled.div`
