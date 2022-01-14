@@ -18,6 +18,11 @@ function Contact() {
       },
       method: "POST",
     });
+
+    // clear the fields 
+    event.target.name.value = null
+    event.target.email.value = null
+    event.target.message.value = null
   };
 
   return (
@@ -44,8 +49,8 @@ function Contact() {
             type="email"
             placeholder="your email"
           />
-          <Content tabIndex="3" name="message" placeholder="your message" />
-          <button tabIndex="4" type="submit" value="confirm" />
+          <Content tabIndex="3" name="message" placeholder="message" />
+          <button tabIndex="4">confirm</button>
         </ContactForm>
       </Container>
     </>

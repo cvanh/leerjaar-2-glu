@@ -9,7 +9,27 @@ export const ContactForm = styled.form`
   @media only screen and (max-width: 868px) {
     width: 100%;
   }
-`;
+
+  button {
+    margin-top: 10px;
+    height: 20px;
+    min-width: 6%;
+    border: 1px solid black;
+    border-radius: 4px;
+    background: none;
+    transition: none;
+  }
+    button:active  {
+      /* transition: color 0.3s; */
+      color: orange;
+      height: 25px;
+      width: 7%;
+    }
+    /* button:hover {
+      /* transition: size 0.3s; */
+      /* color: gray; */
+    } */
+`
 
 export const Input = styled.input`
   display: block;
@@ -18,18 +38,6 @@ export const Input = styled.input`
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 10px;
-
-  button {
-    height: 20px;
-    width:20px;
-    background: none;
-    transition: none;
-    &:hover {
-      transition: color 0.3s;
-      color: orange;
-    }
-    
-  }
 `;
 
 export const Content = styled.textarea`
