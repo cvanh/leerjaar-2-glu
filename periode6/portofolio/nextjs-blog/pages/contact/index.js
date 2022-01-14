@@ -1,8 +1,3 @@
-import Header from "../../components/header/Header"
+import Contact from "./contact"
 
-function Contact(){
-    return(
-        <Header/>
-    )
-}
 export default Contact
