@@ -1,18 +1,11 @@
 import NextAuth from 'next-auth'
 import EmailProvider from 'next-auth/providers/email'
-
+require('dotenv').config()
 
 export default NextAuth({
-  providers: [
-    adapter: TypeORMLegacyAdapter({
-      type: 'mysql',
-      username: process.env.MYSQL_USERNAME,
-      password: process.env.MYSQL_PASSWORD,
-      host: process.env.MYSQL_HOST,
-      database: process.env.MYSQL_DATABASE,
-      synchronize: false
-    }),
-  
+  database: process.env.DATABASE_URL,
+  secret: process.env.SECRET,
+  providers: [ 
     // Passwordless / email sign in
     EmailProvider({         
       server: process.env.MAIL_SERVER,

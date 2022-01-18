@@ -1,10 +1,10 @@
 import { Text, Bar, Social } from "./socialbar.styled";
 import Link from "next/link";
 
-function SocialBar() {
+function SocialBar(props) {
   return (
     <Bar>
-      <Text>my socials</Text>
+      <Text>{props.children}</Text>
       <Link href="mailto: constantijn@vanhartesveldt.nl">
         <Social src="/icons/email.svg" />
       </Link>

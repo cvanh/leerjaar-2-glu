@@ -1,15 +1,17 @@
 import styled from "styled-components";
 
-const Card = styled.div`
+export const Card = styled.div`
   border: 1px black solid;
+  border-radius: 4px;
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
   overflow: hidden;
-
 `;
 
-const CardBig = styled.div`
+export const CardBig = styled.div`
+  border: 1px black solid;  
+  border-radius: 4px;
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
@@ -19,34 +21,26 @@ const CardBig = styled.div`
   ::selection {
     color: none;
     background: none;
-}
+  }
 `;
 
-const Tumbnail = styled.img`
+export const Tumbnail = styled.img`
   margin-top: -20px;
   width: 100%;
   height: 60%;
 `;
 
-const Field = styled.div`
+export const Field = styled.div`
   // this is where all the post cards are stored
-  margin-left: auto;
-  margin-right:auto;
-  width: 70%;
+  justify-content: center;
   display: grid;
   grid-template-columns: 15% 15% 15%;
   grid-gap: 10px;
-  padding: 10px; ;
+  padding: 10px;
+
 
   @media only screen and (max-width: 768px) {
-    width: 100%;
+    grid-template-columns: 33% 33%;
+    /* width: 100%; */
   }
 `;
-
-const Post = {
-  Field,
-  Card,
-  Tumbnail,
-  CardBig,
-};
-export default Post;
